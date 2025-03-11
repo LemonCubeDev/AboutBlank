@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>About:Blank Embedder | LemonCube</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button type="button" class="my-btn">embed about:blank</button>
+    <script type="text/javascript">
+        var urlobj = new window.URL(window.location.href);
+        let url = prompt("url?")
+        if (url) {
+            var win;
+            document.querySelector('button'). onclick = function() {
+            if (win) {
+            win.focus();
+        }
+        else {
+            win = window.open();
+            win.document.body.style.margin = '0';
+            win. document.body.style.height = '100%';
+            var iframe = win.document.createElement('iframe');
+            iframe.style.border='none';
+            iframe.style.width = '100%' ;
+            iframe.style.height = '100%' ;
+            iframe.style.margin = '0';
+            iframe.src = url;
+            win.document.body.appendChild(iframe);
+            }
+            location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
